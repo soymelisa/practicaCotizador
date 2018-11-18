@@ -3,6 +3,10 @@ import Header from './Header';
 import Formulario from './Formulario';
 
 class App extends Component {
+
+  cotizarSeguro = (datos) => {
+    console.log('datos');
+  }
   render() {
     return (
       <div className="contenedor">
@@ -10,7 +14,9 @@ class App extends Component {
           titulo = 'Cotizador de seguro de Autos'
         />
         <div className="contenedor-formulario">
-        <Formulario/>
+        <Formulario
+          cotizarSeguro= {this.cotizarSeguro}
+        />
         </div>
       </div>
     );

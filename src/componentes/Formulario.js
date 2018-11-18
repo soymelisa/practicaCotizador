@@ -3,28 +3,45 @@ import React, {Component} from 'react';
 class Formulario extends Component{
 
     // refs son para leer los valores de los campos de un formulario
+    
+    constructor(props) {
+        super(props);
+        this.marcaRef = React.createRef();
+        this.yearRef = React.createRef();
+        this.planBasicoRef = React.createRef();
+        this.planCompletoRef = React.createRef(); 
+    }
 
-    marcaRef = React.createRef();
-    yearRef = React.createRef();
-    planBasicoRef = React.createRef();
-    planCompletoRef = React.createRef(); 
-
-    cotizarSeguro(e) {
+    cotizarSeguro = (e) => {
         e.preventDefault();
-        console.log(this.marcaRef.current.value);
 
+        const plan = this.planBasicoRef.current.checked ? 'basico' : 'completo';
+        
         // obtener los datos
+        // console.log(this.marcaRef.current.value);
         
         
         // crear el objeto 
+        const infoAuto = {
+            marca: this.marcaRef.current.value,
+            year: this.yearRef.current.value,
+            plan: plan
+        }
 
+        // console.log(infoAuto);
         // enviarlo al componente principal 
+
+        this.props.cotizarSeguro(infoAuto);
+
+        // resetear el formulario 
+
+        console.log(e.currentTarget.reset);
     }
 
 
      render() {
         return (
-            <form className="cotizar-auto" onSubmit={this.cotizarSeguro.bind(this)}>
+            <form className="cotizar-auto" onSubmit={this.cotizarSeguro}>
                 <div className="campo">
                     <label>Marca</label>
                     <select name="marca" ref={this.marcaRef}>
