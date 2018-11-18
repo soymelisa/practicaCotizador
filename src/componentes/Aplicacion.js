@@ -1,11 +1,16 @@
-import React, {Component} from 'react';
 import Productos from './Productos';
 import Header from './Header';
+import React, {Component} from 'react';
 import Footer from './Footer';
 
 class Aplicacion extends Component{
-
-    render() {
+    
+    state = {
+        productos : []
+    };
+    
+    componentDidMount() {
+        
         const productos = [
             {nombre: 'Libro Cthulhu', precio: 200},
             {nombre: 'Disco de música', precio: 240},
@@ -13,6 +18,15 @@ class Aplicacion extends Component{
             {nombre: 'Lentes', precio: 5500},
             {nombre: 'Libreta', precio: 35}
         ]
+
+        setTimeout( () => {
+            this.setState({
+                productos : productos
+            });
+        }, 3000);
+    }
+
+    render() {
         return (
             <div>
                 <Header
