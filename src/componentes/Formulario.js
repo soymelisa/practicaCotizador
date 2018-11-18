@@ -35,7 +35,7 @@ class Formulario extends Component{
 
         // resetear el formulario 
 
-        console.log(e.currentTarget.reset);
+        // console.log(e.currentTarget.reset);
     }
 
 
