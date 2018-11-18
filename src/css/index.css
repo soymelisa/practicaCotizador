@@ -101,7 +101,7 @@ header h1 {
   margin-bottom: 0;
 }
 .resultado div p.header {
-  background-color: #323E48;
+  background-color: #FF777A;
   margin-bottom: 10px;
   color:white;
   padding: 10px;
@@ -140,11 +140,14 @@ span.resultado {
 .gran-total {
   text-align: center;
   padding: .5rem;
-  border: 1px solid #323E48;
-  background-color: #323E48;
+  border: 1px solid #FF777A;
+  background-color: #FF777A;
   margin-top: 1rem;
+  color: white;
 }
 .gran-total p {
+  color: #CCDDE2;
+  background-color: #FF777A;
 
 }
 
